@@ -1,21 +1,39 @@
 import React from "react";
+import Expenses from "./components/Expense/Expenses";
+import { NewExpense } from "./components/NewExpense";
+import "../src/index.css";
 
-function App() {
+const App = () => {
+  const expenses = [
+    {
+      id: "1",
+      exdate: new Date(2022, 3, 22),
+      title: "Car Insurance",
+      price: 400,
+    },
+    {
+      id: "2",
+      exdate: new Date(2022, 7, 22),
+      title: "Groceries",
+      price: 300,
+    },
+    {
+      id: "3",
+      exdate: new Date(2022, 10, 22),
+      title: "Entertaiment",
+      price: 200,
+    },
+  ];
+
   return (
-    <div className="App">
-      <p>
-        Edit <code>src/App.js</code> and save to reload.
-      </p>
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-      </a>
+    <div>
+      <h2>Let's get started</h2>
+      <div className="justify-center">
+        <NewExpense />
+        <Expenses item={expenses} />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
